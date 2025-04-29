@@ -1,0 +1,215 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.content {
+  height: 600px;
+  margin: 0 40px;
+}
+.admin-navbar {
+  display: flex;
+  flex-direction: column;
+  transition: all 0.5s;
+  width: 30px;
+  height: 100vh;
+  background: #484bb3;
+  position: fixed;
+  z-index: 5;
+  color: white;
+}
+.nav-box {
+  margin: 10px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav-box span {
+  position: absolute;
+  transform: translateX(-130px);
+  transition: all 0.3s ease-in-out;
+}
+.admin-navbar:hover .nav-box span {
+  transform: translateX(40px);
+}
+.admin-navbar:hover {
+  width: 300px;
+}
+.admin-navbar:hover .nav-box {
+  text-align: center;
+}
+.admin-navbar:hover span {
+  transform: translateX(0px);
+}
+.admin-header {
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between; /* 왼쪽-오른쪽 분리 */
+  align-items: center;
+  padding-right: 20px; /* 우측 여백 추가 */
+}
+.admin-header-search {
+  margin: 10px 0px;
+  display: flex;
+  height: 30px;
+  text-align: center;
+}
+.search-input {
+  width: 130px;
+  border: 1px solid #ccc;
+  border-radius: 5px 0 0 5px;
+  transition: all 0.5s ease-in-out;
+  outline: none;
+}
+.search-input:focus {
+  width: 300px;
+}
+.search-Btn {
+  border-radius: 0 5px 5px 0;
+  text-align: center;
+  width: 30px;
+  font-size: 10px;
+  color: white;
+  background: black;
+  border: none;
+}
+
+.admin-header-alert {
+  display: flex;
+  gap: 14px;
+  margin-left: auto;
+}
+.alert-minny-park {
+  margin-right: 10px;
+}
+.admin-dashboard-monthly {
+  border: solid 1px #ccc;
+  border-left: solid 2.5px skyblue;
+  border-radius: 5px;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+  height: 100px;
+  float: left;
+  width: 22%;
+  margin: 20px 10px 0 0px;
+  padding: 10px;
+}
+.admin-dashboard-annual {
+  border: solid 1px #ccc;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  height: 100px;
+  border-left: solid 2.5px green;
+  float: left;
+  width: 22%;
+  margin: 20px 10px;
+}
+.admin-dashboard-tasks {
+  border: solid 1px #ccc;
+  border-left: solid 2.5px blue;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  height: 100px;
+  float: left;
+  width: 22%;
+  margin: 20px 10px;
+}
+.admin-dashboard-request {
+  border: solid 1px #ccc;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+  border-left: solid 2.5px orange;
+  border-radius: 5px;
+  height: 100px;
+  float: left;
+  width: 22%;
+  margin: 20px 10px;
+}
+
+.admin-dashboard-monthly {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 0;
+}
+
+.dashboard-monthly-right {
+  width: 70%;
+}
+
+.dashboard-icon {
+  font-size: 30px;
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.admin-dashboard::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+h3 {
+  padding: 10px;
+}
+.admin-overview-title {
+  border-bottom: solid 1px #ccc;
+  background-color: #eee;
+}
+.admin-overview-graf {
+  float: left;
+  width: 65%;
+  border: 1px solid #ccc;
+  margin-right: 2%;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+}
+.admin-overview::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.admin-overview-tasks {
+  float: right;
+  width: 33%;
+  border: solid solid #ccc;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+}
+.task-title {
+  border: 1px solid #ccc;
+  background: #eee;
+}
+.tasks-list ul {
+  list-style: none;
+  padding: 0px;
+}
+.tasks-list ul li {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.admin-dashboard-annual,
+.admin-dashboard-tasks,
+.admin-dashboard-request {
+  float: left;
+  width: 23.5%;
+  margin: 20px 2% 20px 0;
+  padding: 10px;
+}
+@media screen and (max-width: 776px) {
+  body {
+    height: 1200px;
+  }
+  .admin-dashboard-monthly {
+    float: left;
+    width: 100%;
+  }
+  .admin-overview-graf {
+    width: 100%;
+  }
+  .myChart {
+    width: 100%;
+  }
+  .admin-overview-tasks {
+    width: 100%;
+  }
+}

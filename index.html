@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="jp">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="../fontawesome-free-6.7.2-web/fontawesome-free-6.7.2-web/css/all.min.css"
+    />
+  </head>
+  <link rel="stylesheet" href="./index.css" />
+  <body>
+    <div class="container">
+      <div class="admin-navbar">
+        <div class="nav-box">
+          <i class="fa-solid fa-house"></i>
+          <span>Home</span>
+        </div>
+        <div class="nav-box">
+          <i class="fa-solid fa-headphones"></i>
+          <span>Service</span>
+        </div>
+        <div class="nav-box">
+          <i class="fa-solid fa-flag"></i>
+          <span>Alerts</span>
+        </div>
+        <div class="nav-box">
+          <i class="fa-solid fa-chart-pie"></i>
+          <span>Stats</span>
+        </div>
+      </div>
+      <div class="content">
+        <div class="admin-header">
+          <div class="admin-header-search">
+            <input class="search-input" type="text" placeholder="Search" />
+            <button class="search-Btn">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </div>
+          <div class="admin-header-alert">
+            <div class="alert-bell"><i class="fa-solid fa-bell"></i></div>
+            <div class="alert-mail"><i class="fa-solid fa-envelope"></i></div>
+            <div class="alert-minny-park">Minny park</div>
+          </div>
+        </div>
+        <div class="admin-dashboard">
+          <h2>Dashboard</h2>
+          <div class="admin-dashboard-monthly">
+            <div class="dashboard-monthly-right">
+              <p>Earnings (Monthly)</p>
+              <h2>$400,000</h2>
+            </div>
+            <div class="dashboard-icon">
+              <i class="fa-solid fa-calendar"></i>
+            </div>
+          </div>
+          <div class="admin-dashboard-monthly admin-dashboard-annual">
+            <div class="dashboard-monthly-right">
+              <p>Earnings (Annual)</p>
+              <h2>$800,000</h2>
+            </div>
+            <div class="dashboard-icon">
+              <i class="fa-solid fa-dollar-sign"></i>
+            </div>
+          </div>
+          <div class="admin-dashboard-monthly admin-dashboard-request">
+            <div class="dashboard-monthly-right">
+              <p>Tasks</p>
+              <h2>13</h2>
+            </div>
+            <div class="dashboard-icon">
+              <i class="fa-solid fa-list"></i>
+            </div>
+          </div>
+          <div class="admin-dashboard-monthly admin-dashboard-tasks">
+            <div class="dashboard-monthly-right">
+              <p>Requests</p>
+              <h2>26</h2>
+            </div>
+            <div class="dashboard-icon">
+              <i class="fa-solid fa-comments"></i>
+            </div>
+          </div>
+        </div>
+        <div class="admin-overview">
+          <div class="admin-overview-graf">
+            <div class="admin-overview-title">
+              <h3>earnings Overview</h3>
+            </div>
+            <div>
+              <canvas class="myChart" id="myChart"></canvas>
+            </div>
+
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+          </div>
+          <div class="admin-overview-tasks">
+            <div class="task-title">
+              <h3>Tasks</h3>
+            </div>
+            <div class="tasks-list">
+              <ul>
+                <li>Borrowed Items</li>
+                <li>Trello requests</li>
+                <li>Marked Comments</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    var ctx = document.getElementById("myChart").getContext("2d");
+    var myChart = new Chart(ctx, {
+      type: "line",
+      data: {
+        labels: ["January", "February", "March", "April", "May", "July"],
+        datasets: [
+          {
+            label: "Monthly",
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: "rgba(255, 99, 132, 0.2)",
+            borderColor: "rgba(255, 99, 132, 1)",
+            borderWidth: 1,
+          },
+        ],
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true,
+          },
+        },
+      },
+    });
+  </script>
+</html>
